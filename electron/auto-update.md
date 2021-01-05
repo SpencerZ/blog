@@ -39,13 +39,13 @@ updateHandler() {
 	 */
 	autoUpdater.on('error', function (error: Error) {
 		console.log(error);
-  });
+  	});
   
-  /**
-   * autoUpdater如果没有获取到最新版本，发出事件
-   */
-  autoUpdater.on('update-not-available', function (info) {
-    sendUpdateMessage(null);
+  	/**
+   	 * autoUpdater如果没有获取到最新版本，发出事件
+   	 */
+  	autoUpdater.on('update-not-available', function (info) {
+    		sendUpdateMessage(null);
 	});
 	
 	/**
