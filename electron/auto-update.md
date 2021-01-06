@@ -17,6 +17,10 @@ electron-updater: 4.3.5
 ```ts
 const mainWindow = new BrowserWindow({...});
 updateHandler();// 事件监听包含在这个方法内
+/**
+ * 在你设定的时间点触发检查更新
+ */
+autoUpdater.checkForUpdates();
 ```
 ```ts
 updateHandler() {
