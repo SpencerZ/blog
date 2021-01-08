@@ -6,5 +6,5 @@
 
 ## Electron
 1. [electron-updater自动更新](https://github.com/SpencerZ/blog/blob/main/electron/auto-update.md)
-2. keytar记住密码
+2. [keytar记住密码](https://github.com/SpencerZ/blog/blob/main/electron/keytar.md)
 
