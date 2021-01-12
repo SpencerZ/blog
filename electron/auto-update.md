@@ -111,6 +111,14 @@ ipcRenderer.send(MainAction.UPDATE_NOW);
 ## Mac代码签名
 在打包Mac包时，需要加上签名，在XCode中，从Preferences中进入 => 添加Apple ID账号 =》Manage Certificates =》 添加证书即可。
 
+## 版本号
+修改版本号时，可能会有不同的需求，需要加alpha或beta版本，这个时候打包后会生成alpha.yml或者beta.yml。但是如果不配置autoUpdater的Channel，它会只获取latest.yml，所以需要去做以下设置
+```ts
+autoUpdater.channel = 'latest';// 默认值，只检查latest.yml或者latest-mac.yml
+autoUpdater.channel = 'beta';// 检查beta和latest
+autoUpdater.channel = 'alpha';// 检查alpha, beta, 和latest
+```
+
 ## 打包
 执行windows和Mac打包命令后，将得到的文件上传到feedUrl下。
 
