@@ -112,7 +112,20 @@ ipcRenderer.send(MainAction.UPDATE_NOW);
 在打包Mac包时，需要加上签名，在XCode中，从Preferences中进入 => 添加Apple ID账号 =》Manage Certificates =》 添加证书即可。
 
 ## 版本号
-修改版本号时，可能会有不同的需求，需要加alpha或beta版本，这个时候打包后会生成alpha.yml或者beta.yml。但是如果不配置autoUpdater的Channel，它会只获取latest.yml，所以需要去做以下设置
+修改版本号时，可能会有不同的需求，需要加alpha或beta版本，这个时候打包后会生成alpha.yml或者beta.yml。
+### 正式版本
+version: '1.0.0'
+生成latest.yml，在检查更新的时候获取的是latest.yml
+
+### beta版本
+version: '1.0.0-beta.1'
+生成beta.yml，在检查更新的时候获取的是beta.yml
+
+### 如何区分正式和测试环境
+1. 正式用户使用的是正式版本，检查的是latest.yml，所以只需要更新latest.yml就可以实现正式用户的应用更新。
+2. 测试用户使用的是beta版本，检查的是beta.yml，所以只需要更新beta.yml就可以实现测试用户的应用更新。
+
+### 规定应用检查更新channel
 ```ts
 autoUpdater.channel = 'latest';// 默认值，只检查latest.yml或者latest-mac.yml
 autoUpdater.channel = 'beta';// 检查beta和latest
