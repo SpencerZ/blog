@@ -55,7 +55,7 @@ updateHandler() {
 	/**
 	 * autoUpdater在更新下载完成后，发出事件
 	 */
-	autoUpdater.on('update-downloaded', function (event, releaseNotes, releaseName, releaseDate, updateUrl, quitAndUpdate) {
+	autoUpdater.on('update-downloaded', function (info) {
 
 		/**
 		 * 主进程监听开始更新通知，执行安装更新方法
